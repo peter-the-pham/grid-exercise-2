@@ -1,0 +1,63 @@
+.content{
+    display:grid;
+    min-height: 95vh;
+    grid-template-rows: 1fr 1fr min-content 1fr 1fr;
+    grid-template-areas: 
+    "header"
+    "nav" 
+    "sheader"
+    "aside"
+    "footer";
+}
+
+@media (min-width: 800px)
+{
+
+    .content{
+        grid-template-columns: minmax(auto, 250px) minmax(250px, 1fr) minmax(250px, 1fr) minmax(auto, 250px);
+        grid-template-rows: min-content 1fr max-content;
+        grid-template-areas:
+        "header header header header"
+        "nav sheader sheader aside"
+        "footer footer footer footer"
+        ;
+    }
+
+}
+
+.mainhead{
+    grid-area: header;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.mainnav{
+    grid-area: nav;
+    background-color: blueviolet;
+}
+
+.sheader{
+    grid-area: sheader;
+    background-color: white;
+}
+
+.mainaside{
+    grid-area: aside;
+    background-color: orange;
+}
+
+.mainfooter{
+    grid-area: footer;
+    background-color: gray;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content > * {
+    padding: 1rem;
+}
